@@ -28,7 +28,7 @@ export function Navbar() {
   const pathname = usePathname();
   const { isAdmin } = useAdmin();
 
-  const isDashboard = pathname?.startsWith('/member') || pathname?.startsWith('/admin');
+  const isDashboard = pathname === '/member' || pathname?.startsWith('/member/') || pathname === '/admin' || pathname?.startsWith('/admin/');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
